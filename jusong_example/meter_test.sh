@@ -13,3 +13,4 @@ curl -X POST -d '{"project":"ora-example","ora_conn":"user1","ora_password":"You
 curl -X POST -d '{"project":"duration-example","ora_conn":"user1","ora_password":"Your-PassWd","duration":"1m"}' http://localhost:3333/meters
 curl -X POST -d '{"project":"BAD-duration-example","ora_conn":"user1","ora_password":"Your-PassWd","duration":"D1393"}' http://localhost:3333/meters
 curl http://localhost:3333/meters
+echo curl http://localhost:3333/meters/1

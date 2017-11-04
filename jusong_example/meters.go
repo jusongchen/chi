@@ -177,6 +177,10 @@ func (a *MeterRequest) Bind(r *http.Request) error {
 	// just a post-process after a decode..
 	a.ProtectedID = ""                                  // unset the protected ID
 	a.Meter.Slug = strings.ToLower(a.Meter.ProjectName) // setup slug Jusong:TODO
+
+	if a.Meter.Duration == "" {
+		a.Meter.Duration = "1h"
+	}
 	var err error
 	a.duration, err = time.ParseDuration(a.Meter.Duration)
 	if err != nil {
